@@ -1,9 +1,14 @@
 import Rule from "./Rule";
 
-function RulesList() {
+function RulesList({length}) {
+    let rules = []
+    for (let i = 1; i !== length+1; i++) {
+        let ruleT = "Règle n°"+i;
+        rules.push(<Rule title={ruleT} description="A"></Rule>)
+    }
     return (
         <div>
-            <Rule title="Règle n°1" description="A"></Rule>
+            {rules}
         </div>
     )
 }

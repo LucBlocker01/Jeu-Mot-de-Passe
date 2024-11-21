@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <Password></Password>
-      <RulesList></RulesList>
+      <RulesList length={10}></RulesList>
     </div>
   );
 }
