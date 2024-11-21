@@ -3,7 +3,7 @@ import Rule from "./Rule";
 function RulesList() {
     return (
         <div>
-            <Rule></Rule>
+            <Rule title="Règle n°1" description="A"></Rule>
         </div>
     )
 }
