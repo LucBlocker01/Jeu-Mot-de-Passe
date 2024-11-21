@@ -7,7 +7,7 @@ function RulesList({length}) {
         rules.push(<Rule title={ruleT} description="A"></Rule>)
     }
     return (
-        <div>
+        <div class="list">
             {rules}
         </div>
     )

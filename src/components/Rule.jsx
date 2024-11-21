@@ -2,14 +2,14 @@ import PropTypes from "prop-types";
 
 function Rule({title, description}) {
     return (
-        <>
+        <div class="rule">
             <header>
                 {title}
             </header>
             <div>
                 {description}
             </div>
-        </>
+        </div>
     )
 }
 
