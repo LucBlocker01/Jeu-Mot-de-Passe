@@ -1,11 +1,14 @@
+import {useState} from 'react'
 import Password from "./components/Password";
 import RulesList from "./components/RulesList";
 
 function App() {
+  let [passV, setPassV] = useState("");
   return (
     <div className="App">
-      <Password></Password>
+      <Password passV={passV} setPassV={setPassV}></Password>
       <RulesList length={2}></RulesList>
+      <div>{passV}</div>
     </div>
   );
 }
