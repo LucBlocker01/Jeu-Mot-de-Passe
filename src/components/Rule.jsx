@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function Rule({title, description}) {
+function Rule({title, description, passV}) {
     return (
         <div class="rule">
             <header>

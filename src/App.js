@@ -7,8 +7,7 @@ function App() {
   return (
     <div className="App">
       <Password passV={passV} setPassV={setPassV}></Password>
-      <RulesList length={2}></RulesList>
-      <div>{passV}</div>
+      <RulesList length={2} passV={passV}></RulesList>
     </div>
   );
 }
