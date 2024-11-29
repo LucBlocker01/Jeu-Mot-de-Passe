@@ -1,5 +1,5 @@
 const Rule1 = (passV) => {
-  if (passV.length > 8) {
+  if (passV.length >= 8) {
     return true;
   }
   return false;
