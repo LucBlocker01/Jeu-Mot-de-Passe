@@ -5,6 +5,13 @@ const Rule1 = (passV) => {
   return false;
 }
 
-const rulesFunc = [Rule1];
+const Rule2 = (passV) => {
+  if (passV.length > 24) {
+    return true;
+  }
+  return false;
+}
+
+const rulesFunc = [Rule1, Rule2];
 
 export default rulesFunc;

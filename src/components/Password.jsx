@@ -1,12 +1,7 @@
-import rulesFunc from "../ruleFunctions";
-
-function Password({passV, setPassV, length, setLength}) {
+function Password({passV, setPassV, length, fulfilledStatus}) {
 
     function handleChange(event) {
         setPassV(event.target.value);
-        if (rulesFunc[0](passV)) {
-            setLength(length+1)
-        };
     }
 
     return (
