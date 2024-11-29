@@ -3,7 +3,7 @@ import Rule from "./Rule";
 
 function RulesList({length, setLength, passV, fulfilledStatus, setStatus}) {
     let rules = []
-    let descriptions = ["Le mot de passe doit avoir au moins 8 caractères", "Description 2"]
+    let descriptions = ["Le mot de passe doit avoir au moins 8 caractères", "Le mot de passe doit contenir une majuscule", "Le mot de passe doit contenir un nombre"]
 
     useEffect(() => {
         console.log(fulfilledStatus)
