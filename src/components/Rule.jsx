@@ -5,9 +5,11 @@ import rulesFunc from "../ruleFunctions";
 function Rule({title, description, passV, fulfilledStatus, setStatus, id}) {
 
     useEffect(() => {
-        let updatedStatus = [...fulfilledStatus]
+        setStatus((currentStatus) => {
+        let updatedStatus = [...currentStatus];
         updatedStatus[id] = rulesFunc[id](passV);
-        setStatus(updatedStatus)
+        return updatedStatus;
+        })
     }, [passV])
     return (
         <div class="rule">
