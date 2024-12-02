@@ -7,6 +7,10 @@ function Rule({title, description, passV, fulfilledStatus, setStatus, id}) {
     useEffect(() => {
         setStatus((currentStatus) => {
         let updatedStatus = [...currentStatus];
+        console.log(id, rulesFunc.length)
+        if (id >= rulesFunc.length) {
+            throw new Error("Merci d'avoir joué! Plus de règles arriverons bientôt!");
+        }
         updatedStatus[id] = rulesFunc[id](passV);
         return updatedStatus;
         })
