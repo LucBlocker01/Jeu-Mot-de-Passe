@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import rulesFunc from "../ruleFunctions";
 
@@ -7,7 +7,6 @@ function Rule({title, description, passV, fulfilledStatus, setStatus, id}) {
     useEffect(() => {
         setStatus((currentStatus) => {
         let updatedStatus = [...currentStatus];
-        console.log(id, rulesFunc.length)
         if (id >= rulesFunc.length) {
             throw new Error("Merci d'avoir joué! Plus de règles arriverons bientôt!");
         }
@@ -15,8 +14,9 @@ function Rule({title, description, passV, fulfilledStatus, setStatus, id}) {
         return updatedStatus;
         })
     }, [passV])
+    console.log(fulfilledStatus, id, fulfilledStatus[id])
     return (
-        <div class="rule">
+        <div class={fulfilledStatus[id] !== undefined ? fulfilledStatus[id].toString() : "false"}>
             <header>
                 {title}
             </header>

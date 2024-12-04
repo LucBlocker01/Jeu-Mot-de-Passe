@@ -16,7 +16,14 @@ body {
     margin-top: 5%;
 }
 
-.rule {
+.false {
     margin-top: 5%;
-    border: solid black 1px;
+    border: solid red 1px;
+    color: red;
+}
+
+.true {
+    margin-top: 5%;
+    border: solid green 1px;
+    color: green;
 }
