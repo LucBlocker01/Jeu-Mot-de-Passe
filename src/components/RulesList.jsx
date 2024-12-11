@@ -1,8 +1,8 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import Rule from "./Rule";
 
 function RulesList({length, setLength, passV, fulfilledStatus, setStatus}) {
-    let rules = []
+    let [rules, setRules] = useState([]);
     let descriptions = [
         "Le mot de passe doit avoir au moins 8 caractères",
         "Le mot de passe doit contenir une majuscule",
@@ -10,22 +10,46 @@ function RulesList({length, setLength, passV, fulfilledStatus, setStatus}) {
     "Le mot de passe doit contenir un caractère spécial",]
 
     useEffect(() => {
-        console.log(fulfilledStatus)
-        console.log(fulfilledStatus.every((status) => status))
+        setRules((rules) => {
+            return rules.map((rule) => ({
+                ...rule,
+                priority: fulfilledStatus[rule.id] ? 0 : 1
+            })).sort((rule1, rule2) => rule2.priority - rule1.priority)
+        })
         if (fulfilledStatus.every((status) => status)) {
             setLength((length) => {
-                console.log(length)
                 return length+1
             })
         }
     }, [fulfilledStatus])
-    for (let i = 1; i !== length+1; i++) {
-        let ruleT = "Règle n°"+i;
-        rules.push(<Rule title={ruleT} description={descriptions[i-1]} passV={passV} fulfilledStatus={fulfilledStatus} setStatus={setStatus} id={i-1}></Rule>)
-    }
+    useEffect(() => {
+        let newRules = []
+        for (let i = 1; i !== length+1; i++) {
+            let ruleT = "Règle n°"+i;
+            newRules.push({
+                id: i - 1,
+                title: `Règle n°${i}`,
+                description: descriptions[i-1],
+                priority: fulfilledStatus[i-1] ? 0 : 1,
+            })
+        }
+        setRules(newRules)
+    }, [length])
+    console.log(rules)
     return (
         <div class="list">
-            {rules}
+            {rules.map((rule) => (
+                <Rule
+                    key={rule.id}
+                    title={rule.title}
+                    description={rule.description}
+                    passV={passV}
+                    fulfilledStatus={fulfilledStatus}
+                    setStatus={setStatus}
+                    id={rule.id}
+                    priority={rule.priority}
+                />
+            ))}
         </div>
     )
 }
