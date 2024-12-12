@@ -1,3 +1,5 @@
+import { sum } from "lodash";
+
 const Rule1 = (passV) => {
   return passV.length >= 8;
 }
@@ -14,6 +16,11 @@ const Rule4 = (passV) => {
   return /[" !"#$%&'()*+,-.\/:;<=>?@[\]^_`{|}~"]/g.test(passV);
 }
 
-const rulesFunc = [Rule1, Rule2, Rule3, Rule4];
+const Rule5 = (passV) => {
+  const numbers = (passV.match(/\d/g) || []).map(Number)
+  return (sum(numbers) === 25)
+}
+
+const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5];
 
 export default rulesFunc;
