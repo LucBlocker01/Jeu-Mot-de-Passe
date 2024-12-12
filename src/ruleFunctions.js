@@ -29,6 +29,10 @@ const Rule7 = (passV) => {
   return ((passV.match(/\d/g) || []).map(Number).length < 12)
 }
 
-const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7];
+const Rule8 = (passV) => {
+  return /I|V|X|L|C|D|C/g.test(passV);
+}
+
+const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8];
 
 export default rulesFunc;
