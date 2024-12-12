@@ -8,7 +8,9 @@ function RulesList({length, setLength, passV, fulfilledStatus, setStatus}) {
         "Le mot de passe doit contenir une majuscule",
         "Le mot de passe doit contenir un chiffre",
         "Le mot de passe doit contenir un caractère spécial",
-        "La somme de tous les chiffres doit être égale à 25"
+        "La somme de tous les chiffres doit être égale à 25",
+        "Votre mot de passe doit contenir votre mot de passe",
+        "Votre mot de passe doit contenir moins de 12 chiffres"
     ]
 
     useEffect(() => {
