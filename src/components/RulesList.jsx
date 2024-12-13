@@ -13,7 +13,8 @@ function RulesList({length, setLength, passV, fulfilledStatus, setStatus}) {
         "Votre mot de passe doit contenir moins de 12 chiffres",
         "Votre mot de passe doit contenir un chiffre romain",
         "Ceci est mon oeuf, Jacques. Mettez-le en sécurité dans le mot de passe. 🥚",
-        "Le mot de passe doit contenir la solution à ce calcul : (6x3)-5"
+        "Le mot de passe doit contenir la solution à ce calcul : (6x3)-5",
+        "Le produit des nombres romains doit être égale à 35"
     ]
 
     useEffect(() => {

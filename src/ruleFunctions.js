@@ -30,7 +30,7 @@ const Rule7 = (passV) => {
 }
 
 const Rule8 = (passV) => {
-  return /I|V|X|L|C|D|C/g.test(passV);
+  return /I|V|X|L|C|D|M/g.test(passV);
 }
 
 const Rule9 = (passV) => {
@@ -41,6 +41,40 @@ const Rule10 = (passV) => {
   return /13/g.test(passV)
 }
 
-const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10];
+const Rule11 = (passV) => {
+  let romannumerals = ((passV.match(/[IVXLCDM]+/g) || [])).map((numeral) => {
+    let res = 0;
+    numeral.split("").forEach((character) => {
+      switch(character) {
+        case "I" :
+          res += 1;
+          break;
+        case "V" :
+          res += 5;
+          break;
+        case "X" :
+          res += 10;
+          break;
+        case "L" :
+          res += 50;
+          break;
+        case "C" :
+          res += 100;
+          break;
+        case "D" :
+          res += 500;
+          break;
+        case "M" :
+          res += 1000;
+          break;
+      }
+    })
+    return res;
+  })
+  console.log(romannumerals, romannumerals.reduce((acc, num) => acc*num, 1))
+  return (romannumerals.reduce((acc, num) => acc*num, 1) === 35);
+}
+
+const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10, Rule11];
 
 export default rulesFunc;
