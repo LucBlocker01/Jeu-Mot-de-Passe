@@ -37,6 +37,10 @@ const Rule9 = (passV) => {
   return /🥚/g.test(passV);
 }
 
-const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9];
+const Rule10 = (passV) => {
+  return /13/g.test(passV)
+}
+
+const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10];
 
 export default rulesFunc;
