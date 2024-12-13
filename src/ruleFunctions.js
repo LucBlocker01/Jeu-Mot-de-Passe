@@ -75,6 +75,14 @@ const Rule11 = (passV) => {
   return (romannumerals.reduce((acc, num) => acc*num, 1) === 35);
 }
 
-const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10, Rule11];
+const Rule12 = (passV) => {
+  const date = new Date();
+  const year = date.getFullYear();
+  const regex = new RegExp(`${year}`)
+  console.log(year)
+  return regex.test(passV);
+}
+
+const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10, Rule11, Rule12];
 
 export default rulesFunc;
