@@ -8,7 +8,9 @@ function Rule({title, description, passV, fulfilledStatus, setStatus, id, priori
         setStatus((currentStatus) => {
         let updatedStatus = [...currentStatus];
         if (id >= rulesFunc.length) {
-            throw new Error("Merci d'avoir joué! Plus de règles arriverons bientôt!");
+            document.querySelector(".modalEnd").classList.remove("hidden")
+            document.querySelector(".overlay").classList.remove("hidden")
+            return currentStatus;
         }
         updatedStatus[id] = rulesFunc[id](passV);
         updatedStatus[id] === true ? priority = 0 : priority = 1
