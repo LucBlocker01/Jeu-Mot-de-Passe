@@ -48,7 +48,6 @@ function RulesList({length, setLength, passV, fulfilledStatus, setStatus}) {
         }
         setRules(newRules)
     }, [length])
-    console.log(rules)
     return (
         <div class="list">
             {rules.map((rule) => (

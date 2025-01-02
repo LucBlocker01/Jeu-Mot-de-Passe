@@ -13,6 +13,17 @@ body {
     margin-top: 50%;
 }
 
+textarea {
+    overflow: hidden;
+    resize: none;
+    width: 100%;
+    padding: 0;
+    line-height: 1.2;
+    box-sizing: border-box;
+    font-size: 20px;
+    height: auto;
+}
+
 .list {
     margin-top: 5%;
 }
