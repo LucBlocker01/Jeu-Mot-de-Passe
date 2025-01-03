@@ -1,6 +1,7 @@
 import { sum } from "lodash";
 
 const Rule1 = (passV) => {
+  console.log(Array.from(passV.matchAll(/./gu), match => match[0]).length)
   return passV.length >= 8;
 }
 
@@ -71,7 +72,6 @@ const Rule11 = (passV) => {
     })
     return res;
   })
-  console.log(romannumerals, romannumerals.reduce((acc, num) => acc*num, 1))
   return (romannumerals.reduce((acc, num) => acc*num, 1) === 35);
 }
 
@@ -79,10 +79,14 @@ const Rule12 = (passV) => {
   const date = new Date();
   const year = date.getFullYear();
   const regex = new RegExp(`${year}`)
-  console.log(year)
   return regex.test(passV);
 }
 
-const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10, Rule11, Rule12];
+const Rule13 = (passV) => {
+  const regex = new RegExp(`${Array.from(passV.matchAll(/./gu), match => match[0]).length}`)
+  return regex.test(passV);
+}
+
+const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10, Rule11, Rule12, Rule13];
 
 export default rulesFunc;
