@@ -19,10 +19,10 @@ function Rule({title, description, passV, fulfilledStatus, setStatus, id, priori
     }, [passV])
     return (
         <div class={fulfilledStatus[id] !== undefined ? fulfilledStatus[id].toString() : "false"}>
-            <header>
+            <header class="ruleHeader">
                 {title}
             </header>
-            <div>
+            <div class="ruleDescription">
                 {description}
             </div>
         </div>

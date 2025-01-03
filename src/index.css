@@ -7,6 +7,7 @@ body {
     flex-direction: column;
     align-items: center;
     position: relative;
+    overflow-x: hidden;
 }
 
 .password {
@@ -29,15 +30,40 @@ textarea {
 }
 
 .false {
+    overflow: hidden;
     margin-top: 5%;
-    border: solid red 1px;
-    color: red;
+    border: solid rgb(158, 0, 0) 2px;
+    border-radius: 35px;
+    box-sizing: border-box;
+    max-width: 314px;
 }
 
 .true {
+    overflow: hidden;
     margin-top: 5%;
-    border: solid green 1px;
-    color: green;
+    border: solid rgb(38, 155, 38) 2px;
+    border-radius: 35px;
+    box-sizing: border-box;
+}
+
+.false>.ruleHeader {
+    padding: 5%;
+    background-color: rgb(255, 182, 182);
+}
+
+.true>.ruleHeader {
+    padding: 5%;
+    background-color: rgb(172, 255, 172);
+}
+
+.false>.ruleDescription {
+    padding: 5%;
+    background-color: red
+}
+
+.true>.ruleDescription {
+    padding: 5%;
+    background-color: limegreen
 }
 
 .overlay {
