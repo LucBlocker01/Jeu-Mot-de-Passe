@@ -4,6 +4,8 @@ function Password({passV, setPassV, length, fulfilledStatus}) {
 
     const textareaRef = useRef(null);
 
+    const passVLength = Array.from(passV.matchAll(/./gu), match => match[0]).length
+
     function handleChange(event) {
         setPassV(event.target.value);
     }
@@ -35,7 +37,10 @@ function Password({passV, setPassV, length, fulfilledStatus}) {
     return (
         <div class="password">
             <label>Mot de passe</label>
-            <textarea ref={textareaRef} value={passV} onChange={handleChange}/>
+            <div class="passInput">
+                <textarea ref={textareaRef} value={passV} onChange={handleChange}/>
+                <p class="passVLength">{passVLength}</p>
+            </div>
         </div>
     )
 }

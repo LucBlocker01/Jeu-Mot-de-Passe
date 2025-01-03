@@ -14,6 +14,14 @@ body {
     margin-top: 50%;
 }
 
+.passInput {
+    display: flex;
+}
+
+.passVLength {
+    margin-left: 5%;
+}
+
 textarea {
     overflow: hidden;
     resize: none;
