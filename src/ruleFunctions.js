@@ -23,7 +23,7 @@ const Rule5 = (passV) => {
 }
 
 const Rule6 = (passV) => {
-  return true;
+  return /janvier|février|mars|avril|mai|juin|juillet|août|septembre|octobre|novembre|décembre/gi.test(passV)
 }
 
 const Rule7 = (passV) => {
