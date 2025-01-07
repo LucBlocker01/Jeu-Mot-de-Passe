@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import Rule from "./Rule";
 
-function RulesList({length, setLength, passV, fulfilledStatus, setStatus}) {
+function RulesList({length, setLength, passV, setPassV, fulfilledStatus, setStatus}) {
     let [rules, setRules] = useState([]);
     let descriptions = [
         "Le mot de passe doit avoir au moins 8 caractères",
@@ -18,9 +18,11 @@ function RulesList({length, setLength, passV, fulfilledStatus, setStatus}) {
         "Le mot de passe doit contenir l'année en cours",
         "Le mot de passe doit contenir la longueur du mot de passe",
         "Votre mot de passe doit contenir moins de 12 chiffres",
+        "test"
     ]
 
     useEffect(() => {
+        console.log(length)
         if (!fulfilledStatus[8] && length > 9) {
             document.querySelector(".modalEgg").classList.remove("hidden")
             document.querySelector(".overlay").classList.remove("hidden")
@@ -35,6 +37,16 @@ function RulesList({length, setLength, passV, fulfilledStatus, setStatus}) {
             setLength((length) => {
                 return length+1
             })
+            if (length >= 14) {
+                console.log("FIRE")
+                let characterFlame = passV.indexOf("🥚");
+                while (characterFlame === passV.indexOf("🥚")) {
+                    characterFlame = Math.floor(Math.random()*passV.length)
+                }
+                const newPassV = passV.slice(0, characterFlame) + "🔥" + passV.slice(characterFlame + 1)
+                console.log(newPassV)
+                setPassV(newPassV);
+            }
         }
     }, [fulfilledStatus])
     useEffect(() => {

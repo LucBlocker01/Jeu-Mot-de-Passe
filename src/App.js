@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Password passV={passV} setPassV={setPassV} length={length} fulfilledStatus={fulfilledStatus}></Password>
-      <RulesList length={length} setLength={setLength} passV={passV} fulfilledStatus={fulfilledStatus} setStatus={setStatus}></RulesList>
+      <RulesList length={length} setLength={setLength} passV={passV} setPassV={setPassV} fulfilledStatus={fulfilledStatus} setStatus={setStatus}></RulesList>
       <div class="overlay hidden"></div>
       <div class="modal hidden modalEgg">
         <p>Jacques a été tué...</p>

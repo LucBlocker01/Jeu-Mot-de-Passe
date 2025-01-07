@@ -1,7 +1,6 @@
 import { sum } from "lodash";
 
 const Rule1 = (passV) => {
-  console.log(Array.from(passV.matchAll(/./gu), match => match[0]).length)
   return passV.length >= 8;
 }
 
@@ -91,6 +90,10 @@ const Rule14 = (passV) => {
   return ((passV.match(/\d/g) || []).map(Number).length < 12)
 }
 
-const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10, Rule11, Rule12, Rule13, Rule14];
+const Rule15 = (passV) => {
+  return false;
+}
+
+const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10, Rule11, Rule12, Rule13, Rule14, Rule15];
 
 export default rulesFunc;
