@@ -17,8 +17,8 @@ function RulesList({length, setLength, passV, setPassV, fulfilledStatus, setStat
         "Le produit des nombres romains doit être égale à 35",
         "Le mot de passe doit contenir l'année en cours",
         "Le mot de passe doit contenir la longueur du mot de passe",
-        "Votre mot de passe doit contenir moins de 12 chiffres",
-        "test"
+        "Le mot de passe doit contenir moins de 12 chiffres",
+        "Oh non! Votre mot de passe est en feu! Vite, éteignez-le!"
     ]
 
     useEffect(() => {
@@ -37,8 +37,7 @@ function RulesList({length, setLength, passV, setPassV, fulfilledStatus, setStat
             setLength((length) => {
                 return length+1
             })
-            if (length >= 14) {
-                console.log("FIRE")
+            if (length === 14) {
                 let characterFlame = passV.indexOf("🥚");
                 while (characterFlame === passV.indexOf("🥚")) {
                     characterFlame = Math.floor(Math.random()*passV.length)
