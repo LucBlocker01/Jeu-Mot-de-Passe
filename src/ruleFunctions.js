@@ -27,11 +27,11 @@ const Rule6 = (passV) => {
 }
 
 const Rule7 = (passV) => {
-  return ((passV.match(/\d/g) || []).map(Number).length < 12)
+  return /I|V|X|L|C|D|M/g.test(passV);
 }
 
 const Rule8 = (passV) => {
-  return /I|V|X|L|C|D|M/g.test(passV);
+  return /He|Li|Be|Ne|Na|Mg|Al|Mg|Al|Si|Cl|Ar|Ca|Sc|Ti|Cr|Mn|Fe|Co|Ni|Cu|Zn|Ga|Ge|As|Se|Br|Kr|Rb|Sr|Zr|Nb|Mo|Tc|Ru|Rh|Pd|Ag|Cd|In|Sn|Sb|Te|Xe|Cs|Ba|La|Ce|Pr|Nd|Pm|Sm|Eu|Gd|Tb|Dy|Ho|Er|Tm|Yb|Lu|Hf|Ta|Ta|Re|Os|Ir|Pt|Au|Tl|Pb|Po|Bi|At|Rn|Fr|Ra|Ac|Th|Pa|Np|Pu|Am|Cm|Bk|Cf|Es|Fm|Md|No|Lr|Rf|Db|Sg|Bh|Hs|Mt|Ds|Rg|Cn|Nh|Fl|Mc|Lv|Ts|Og/g.test(passV)
 }
 
 const Rule9 = (passV) => {
@@ -87,6 +87,10 @@ const Rule13 = (passV) => {
   return regex.test(passV);
 }
 
-const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10, Rule11, Rule12, Rule13];
+const Rule14 = (passV) => {
+  return ((passV.match(/\d/g) || []).map(Number).length < 12)
+}
+
+const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10, Rule11, Rule12, Rule13, Rule14];
 
 export default rulesFunc;

@@ -37,43 +37,44 @@ textarea {
     margin-top: 5%;
 }
 
-.false {
+.false, .true {
     overflow: hidden;
     margin-top: 5%;
-    border: solid rgb(158, 0, 0) 2px;
     border-radius: 35px;
     box-sizing: border-box;
     width: 314px;
     max-width: 314px;
+}
+
+.false {
+    border: solid rgb(158, 0, 0) 2px;
 }
 
 .true {
-    overflow: hidden;
-    margin-top: 5%;
     border: solid rgb(38, 155, 38) 2px;
-    border-radius: 35px;
-    box-sizing: border-box;
-    width: 314px;
-    max-width: 314px;
+}
+
+.false>.ruleHeader, .true>.ruleHeader {
+    padding: 5%;
 }
 
 .false>.ruleHeader {
-    padding: 5%;
     background-color: rgb(255, 182, 182);
 }
 
 .true>.ruleHeader {
-    padding: 5%;
     background-color: rgb(172, 255, 172);
 }
 
-.false>.ruleDescription {
+.false>.ruleDescription, .true>.ruleDescription {
     padding: 5%;
+}
+
+.false>.ruleDescription {
     background-color: red
 }
 
 .true>.ruleDescription {
-    padding: 5%;
     background-color: limegreen
 }
 
