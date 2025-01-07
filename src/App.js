@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Password from "./components/Password";
 import RulesList from "./components/RulesList";
 
@@ -6,6 +6,47 @@ function App() {
   let [passV, setPassV] = useState("");
   let [length, setLength] = useState(1);
   let [fulfilledStatus, setStatus] = useState(Array.from({length}, () => false))
+  let [fireSpreading, setFireSpreading] = useState(false);
+
+  let passVRef = useRef();
+
+  function fireSpread() {
+    let passV = passVRef.current;
+    let newPassV = [...passV];
+    let newFireIndexes = []
+    for (let characterIndex = 0; characterIndex < passV.length-1; characterIndex++) {
+      if (newPassV[characterIndex] === "🔥") {
+        if (characterIndex > 0 && newPassV[characterIndex-1] !== "🔥") {
+          newFireIndexes.push(characterIndex-1)
+        }
+        if (characterIndex < passV.length - 1 && newPassV[characterIndex + 1] !== "🔥") {
+          newFireIndexes.push(characterIndex+1)
+        }
+      }
+    }
+    for (let index of newFireIndexes) {
+      newPassV[index] = "🔥";
+    }
+    setPassV((oldPassV) => {
+      if (oldPassV === passV) {
+        return newPassV.join("")
+      }
+      return oldPassV
+    })
+    setTimeout(() => fireSpread(), 1000)
+  }
+
+  useEffect(() => {
+    passVRef.current = passV;
+
+  }, [passV])
+
+  useEffect(() => {
+    if (length >= 14 && !fireSpreading) {
+      fireSpread();
+      setFireSpreading(true);
+    }
+  }, [length])
   return (
     <div className="App">
       <Password passV={passV} setPassV={setPassV} length={length} fulfilledStatus={fulfilledStatus}></Password>
