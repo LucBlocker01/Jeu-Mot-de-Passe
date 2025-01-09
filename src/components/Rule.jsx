@@ -1,8 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import rulesFunc from "../ruleFunctions";
 
-function Rule({title, description, passV, fulfilledStatus, setStatus, id, priority}) {
+function Rule({title, description, passV, length, fulfilledStatus, setStatus, id, priority}) {
+    let [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        setTimeout(() => setVisible(true), 50);
+    }, [length])
 
     useEffect(() => {
         setStatus((currentStatus) => {
@@ -18,7 +23,7 @@ function Rule({title, description, passV, fulfilledStatus, setStatus, id, priori
         })
     }, [passV])
     return (
-        <div class={fulfilledStatus[id] !== undefined ? fulfilledStatus[id].toString() : "false"}>
+        <div class={`${fulfilledStatus[id] !== undefined ? fulfilledStatus[id].toString() : "false"} ${ visible ? "visible" : ""}`}>
             <header class="ruleHeader">
                 {title}
             </header>

@@ -69,6 +69,7 @@ function RulesList({length, setLength, passV, setPassV, fulfilledStatus, setStat
                     title={rule.title}
                     description={rule.description}
                     passV={passV}
+                    length={length}
                     fulfilledStatus={fulfilledStatus}
                     setStatus={setStatus}
                     id={rule.id}
