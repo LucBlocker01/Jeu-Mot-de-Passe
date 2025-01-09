@@ -29,8 +29,8 @@ function Password({passV, setPassV, length, fulfilledStatus}) {
     return (
         <div class="password">
             <label>Mot de passe</label>
-            <div class="passInput">
-                <textarea ref={textareaRef} value={passV} onChange={handleChange}/>
+            <div class="passZone">
+                <textarea class="passInput" ref={textareaRef} value={passV} onChange={handleChange}/>
                 <p class="passVLength">{passVLength}</p>
             </div>
         </div>
