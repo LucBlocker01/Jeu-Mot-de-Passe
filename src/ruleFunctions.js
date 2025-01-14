@@ -1,4 +1,5 @@
 import { sum } from "lodash";
+import getRomanNumerals from "./utils";
 
 const Rule1 = (passV) => {
   return passV.length >= 8;
@@ -42,36 +43,7 @@ const Rule10 = (passV) => {
 }
 
 const Rule11 = (passV) => {
-  let romannumerals = ((passV.match(/[IVXLCDM]+/g) || [])).map((numeral) => {
-    let res = 0;
-    numeral.split("").forEach((character) => {
-      switch(character) {
-        case "I" :
-          res += 1;
-          break;
-        case "V" :
-          res += 5;
-          break;
-        case "X" :
-          res += 10;
-          break;
-        case "L" :
-          res += 50;
-          break;
-        case "C" :
-          res += 100;
-          break;
-        case "D" :
-          res += 500;
-          break;
-        case "M" :
-          res += 1000;
-          break;
-      }
-    })
-    return res;
-  })
-  return (romannumerals.reduce((acc, num) => acc*num, 1) === 35);
+  return (getRomanNumerals(passV).reduce((acc, num) => acc*num, 1) === 35);
 }
 
 const Rule12 = (passV) => {
