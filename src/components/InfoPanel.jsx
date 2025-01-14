@@ -1,6 +1,16 @@
-function InfoPanel() {
+function InfoPanel({passV, length}) {
+
+    console.log(passV);
+
+    const passVLength = Array.from(passV.matchAll(/./gu), match => match[0]).length
+
+
     return (
-        <div>hello world</div>
+        <>
+            <div>Informations du mot de passe
+                <div>Longueur : {passVLength}</div>
+            </div>
+        </>
     )
 }
 

@@ -55,7 +55,7 @@ function App() {
       <RulesList length={length} setLength={setLength} passV={passV} setPassV={setPassV} fulfilledStatus={fulfilledStatus} setStatus={setStatus}></RulesList>
      </div>
      <div class="side">
-      <InfoPanel></InfoPanel>
+      <InfoPanel passV={passV} length={length}></InfoPanel>
      </div>
       <div class="overlay hidden"></div>
       <div class="modal hidden modalEgg">
