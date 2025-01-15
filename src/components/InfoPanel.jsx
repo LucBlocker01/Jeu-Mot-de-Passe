@@ -7,21 +7,19 @@ function InfoPanel({passV, length}) {
     const passSum = sum((passV.match(/\d/g) || []).map(Number))
     const passRomanProduct = getRomanNumerals(passV).length == 0 ? 0 : getRomanNumerals(passV).reduce((acc, num) => acc*num, 1);
 
-    console.log(passRomanProduct, getRomanNumerals(passV));
-
 
     return (
         <>
-        <div class="panel">
+        <div class={`panel ${length >= 5 ? "visible" : ""}`}>
             <div class="panelHeader">Informations du mot de passe</div>
             <div class="panelMain">
                 <div class="info">
-                    <div class="infoHeader">Longueur</div>
-                    <div class="infoMain">{passVLength}</div>
-                </div>
-                <div class="info">
                     <div class="infoHeader">Somme des chiffres</div>
                     <div class="infoMain">{passSum}</div>
+                </div>
+                <div class="info">
+                    <div class="infoHeader">Longueur</div>
+                    <div class="infoMain">{passVLength}</div>
                 </div>
                 <div class="info">
                     <div class="infoHeader">Produit des nombres romains</div>
