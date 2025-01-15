@@ -17,8 +17,16 @@ body {
     width: 100%;
 }
 
-.main,.side {
+.main {
     margin-left: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.side {
+    margin-right: 15%;
+    margin-left: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,11 +51,50 @@ textarea {
     height: auto;
 }
 
+.panel {
+    margin-top: 50%;
+    border-radius: 35px;
+    border: solid navy 1px;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px #000000;
+}
+
+.panelHeader {
+    background-color: lightblue;
+    padding: 5px;
+    text-align: center;
+}
+
+.panelMain {
+    background-color: blue;
+    padding: 5px;
+}
+
+.info {
+    margin-top: 5px;
+    border-radius: 35px;
+    overflow: hidden;
+    border: solid 1px purple;
+}
+
+.infoHeader {
+    background-color: rgb(255, 0, 255);
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+.infoMain {
+    background-color: rgb(157, 0, 157);
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
 .list {
     margin-top: 5%;
 }
 
-.false, .true {
+.rule {
     opacity: 0;
     visibility: hidden;
     overflow: hidden;
@@ -59,7 +106,7 @@ textarea {
     transition: opacity 0.5s ease-in;
 }
 
-.false.visible, .true.visible {
+.rule.visible {
     opacity: 1;
     visibility: visible;
     overflow: hidden;

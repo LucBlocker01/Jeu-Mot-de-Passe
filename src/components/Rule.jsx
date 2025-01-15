@@ -23,7 +23,7 @@ function Rule({title, description, passV, length, fulfilledStatus, setStatus, id
         })
     }, [passV])
     return (
-        <div class={`${fulfilledStatus[id] !== undefined ? fulfilledStatus[id].toString() : "false"} ${ visible ? "visible" : ""}`}>
+        <div class={`rule ${fulfilledStatus[id] !== undefined ? fulfilledStatus[id].toString() : "false"} ${ visible ? "visible" : ""}`}>
             <header class="ruleHeader">
                 {title}
             </header>
