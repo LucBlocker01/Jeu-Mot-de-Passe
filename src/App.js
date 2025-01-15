@@ -10,6 +10,7 @@ function App() {
   let [fireSpreading, setFireSpreading] = useState(false);
 
   let passVRef = useRef();
+  let fulfilledStatusRef = useRef();
 
   function fireSpread() {
     let passV = passVRef.current;
@@ -34,18 +35,25 @@ function App() {
       }
       return oldPassV
     })
-    setTimeout(() => fireSpread(), 1200)
+    if (!fulfilledStatusRef.current[14]) {
+      setTimeout(() => fireSpread(), 1200)
+    }
   }
 
   useEffect(() => {
     passVRef.current = passV;
-
   }, [passV])
 
   useEffect(() => {
-    if (length >= 14 && !fireSpreading) {
-      fireSpread();
-      setFireSpreading(true);
+    fulfilledStatusRef.current = fulfilledStatus;
+  }, [fulfilledStatus])
+
+  useEffect(() => {
+    if (length >= 15 && !fireSpreading) {
+      setTimeout(() => {
+        fireSpread();
+        setFireSpreading(true);
+      }, 1200)
     }
   }, [length])
   return (
