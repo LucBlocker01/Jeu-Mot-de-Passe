@@ -31,6 +31,18 @@
 }
 
 .info {
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 5px;
+    border-radius: 35px;
+    overflow: hidden;
+    border: solid 1px purple;
+    transition: opacity 0.5s ease-in;
+}
+
+.info.visible {
+    opacity: 1;
+    visibility: visible;
     margin-top: 5px;
     border-radius: 35px;
     overflow: hidden;
@@ -50,3 +62,4 @@
     text-align: center;
     font-weight: bold;
 }
+
