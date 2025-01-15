@@ -22,7 +22,6 @@ function RulesList({length, setLength, passV, setPassV, fulfilledStatus, setStat
     ]
 
     useEffect(() => {
-        console.log(length)
         if (!fulfilledStatus[8] && length > 9) {
             document.querySelector(".modalEgg").classList.remove("hidden")
             document.querySelector(".overlay").classList.remove("hidden")
@@ -38,12 +37,11 @@ function RulesList({length, setLength, passV, setPassV, fulfilledStatus, setStat
                 return length+1
             })
             if (length === 14) {
-                let characterFlame = passV.indexOf("🥚");
-                while (characterFlame === passV.indexOf("🥚")) {
+                let characterFlame = 0;
+                while (characterFlame === passV.indexOf("🥚") || characterFlame === 0 || Math.abs(characterFlame - passV.indexOf("🥚")) < 3) {
                     characterFlame = Math.floor(Math.random()*passV.length)
                 }
                 const newPassV = passV.slice(0, characterFlame) + "🔥" + passV.slice(characterFlame + 1)
-                console.log(newPassV)
                 setPassV(newPassV);
             }
         }

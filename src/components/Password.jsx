@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react'
 
-function Password({passV, setPassV, length, fulfilledStatus}) {
+function Password({passV, setPassV}) {
 
     const textareaRef = useRef(null);
 

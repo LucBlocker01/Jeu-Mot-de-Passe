@@ -34,7 +34,7 @@ function App() {
       }
       return oldPassV
     })
-    setTimeout(() => fireSpread(), 1000)
+    setTimeout(() => fireSpread(), 1200)
   }
 
   useEffect(() => {
