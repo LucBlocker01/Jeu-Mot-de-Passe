@@ -18,7 +18,8 @@ function RulesList({length, setLength, passV, setPassV, fulfilledStatus, setStat
         "Le mot de passe doit contenir l'année en cours",
         "Le mot de passe doit contenir la longueur du mot de passe",
         "Le mot de passe doit contenir moins de 12 chiffres",
-        "Oh non! Votre mot de passe est en feu! Vite, éteignez-le!"
+        "Oh non! Votre mot de passe est en feu! Vite, éteignez-le!",
+        "Jacques a éclos! S'il vous plaît, n'oubliez pas de le nourrir. Il mange 3 🐛 par minute."
     ]
 
     useEffect(() => {
@@ -58,6 +59,9 @@ function RulesList({length, setLength, passV, setPassV, fulfilledStatus, setStat
             })
         }
         setRules(newRules)
+    if (length === 16) {
+        setPassV(passV.replace("🥚", "🐔"))
+    }
     }, [length])
     return (
         <div class="list">

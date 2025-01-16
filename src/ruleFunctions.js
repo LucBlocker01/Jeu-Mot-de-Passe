@@ -35,7 +35,7 @@ const Rule8 = (passV) => {
 }
 
 const Rule9 = (passV) => {
-  return /🥚/g.test(passV);
+  return (/🥚/g.test(passV) || /🐔/g.test(passV));
 }
 
 const Rule10 = (passV) => {
@@ -66,6 +66,10 @@ const Rule15 = (passV) => {
   return !/🔥/gu.test(passV);
 }
 
-const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10, Rule11, Rule12, Rule13, Rule14, Rule15];
+const Rule16 = (passV) => {
+  return /🐛/gu.test(passV);
+}
+
+const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10, Rule11, Rule12, Rule13, Rule14, Rule15, Rule16];
 
 export default rulesFunc;
