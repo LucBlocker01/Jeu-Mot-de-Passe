@@ -21,6 +21,9 @@ function App() {
       <div class="modal modalEgg">
         <p>JACQUES EST MORT</p>
       </div>
+      <div class="modal modalFood">
+        <p>JACQUES A ÉTÉ SURALIMENTÉ</p>
+      </div>
       <div class="modal modalEnd">
         <p>MERCI D'AVOIR JOUÉ! PLUS DE RÈGLES ARRIVERONS BIENTÔT!</p>
       </div>

@@ -15,6 +15,12 @@ function Password({passV, setPassV, length, fulfilledStatus}) {
     function eatWorm() {
         let passV = passVRef.current;
         let newPassV = [...passV];
+        if (newPassV.join("").split("🐛").length-1 > 3) {
+            let indexChicken = newPassV.indexOf("🐔");
+            newPassV[indexChicken] = "⚰️";
+            document.querySelector(".modalFood").classList.add("visible")
+            document.querySelector(".overlay").classList.add("visible")
+        }
         let indexW = newPassV.indexOf("🐛");
         if (indexW > -1) {
             console.log(passV, passVRef.current, newPassV, newPassV[indexW])
