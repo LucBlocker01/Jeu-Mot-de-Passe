@@ -5,7 +5,7 @@ function InfoPanel({passV, length}) {
 
     const passVLength = Array.from(passV.matchAll(/./gu), match => match[0]).length
     const passSum = sum((passV.match(/\d/g) || []).map(Number))
-    const passRomanProduct = getRomanNumerals(passV).length == 0 ? 0 : getRomanNumerals(passV).reduce((acc, num) => acc*num, 1);
+    const passRomanProduct = getRomanNumerals(passV).length === 0 ? 0 : getRomanNumerals(passV).reduce((acc, num) => acc*num, 1);
 
 
     return (

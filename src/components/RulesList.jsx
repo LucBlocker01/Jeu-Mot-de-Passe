@@ -37,20 +37,11 @@ function RulesList({length, setLength, passV, setPassV, fulfilledStatus, setStat
             setLength((length) => {
                 return length+1
             })
-            if (length === 14) {
-                let characterFlame = 0;
-                while (characterFlame === passV.indexOf("🥚") || characterFlame === 0 || Math.abs(characterFlame - passV.indexOf("🥚")) < 3) {
-                    characterFlame = Math.floor(Math.random()*passV.length)
-                }
-                const newPassV = passV.slice(0, characterFlame) + "🔥" + passV.slice(characterFlame + 1)
-                setPassV(newPassV);
-            }
         }
     }, [fulfilledStatus])
     useEffect(() => {
         let newRules = []
         for (let i = 1; i !== length+1; i++) {
-            let ruleT = "Règle n°"+i;
             newRules.push({
                 id: i - 1,
                 title: `Règle n°${i}`,
@@ -59,10 +50,8 @@ function RulesList({length, setLength, passV, setPassV, fulfilledStatus, setStat
             })
         }
         setRules(newRules)
-    if (length === 16) {
-        setPassV(passV.replace("🥚", "🐔"))
-    }
     }, [length])
+
     return (
         <div class="list">
             {rules.map((rule) => (
