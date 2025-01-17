@@ -12,6 +12,21 @@ function Password({passV, setPassV, length, fulfilledStatus}) {
         setPassV(event.target.value);
     }
 
+    function eatWorm() {
+        let passV = passVRef.current;
+        let newPassV = [...passV];
+        let indexW = newPassV.indexOf("🐛");
+        if (indexW > -1) {
+            console.log(passV, passVRef.current, newPassV, newPassV[indexW])
+            newPassV.splice(indexW, 1)
+        } else {
+            let indexChicken = newPassV.indexOf("🐔");
+            newPassV[indexChicken] = "⚰️";
+        }
+        setPassV(newPassV.join(""));
+        setTimeout(() => eatWorm(), 20000)
+    }
+
     function fireSpread() {
         let passV = passVRef.current;
         let newPassV = [...passV];
@@ -73,6 +88,11 @@ function Password({passV, setPassV, length, fulfilledStatus}) {
             fireSpread();
             setFireSpreading(true);
           }, 1200)
+        }
+        if (length === 16) {
+            setTimeout(() => {
+                eatWorm();
+            }, 20000)
         }
       }, [length])
 
