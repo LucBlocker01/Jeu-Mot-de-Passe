@@ -17,12 +17,12 @@ function App() {
      <div class="side">
       <InfoPanel passV={passV} length={length}></InfoPanel>
      </div>
-      <div class="overlay hidden"></div>
-      <div class="modal hidden modalEgg">
-        <p>Jacques a été tué...</p>
+      <div class="overlay"></div>
+      <div class="modal modalEgg">
+        <p>JACQUES EST MORT</p>
       </div>
-      <div class="modal hidden modalEnd">
-        <p>Merci d'avoir joué! Plus de règles arriverons bientôt!</p>
+      <div class="modal modalEnd">
+        <p>MERCI D'AVOIR JOUÉ! PLUS DE RÈGLES ARRIVERONS BIENTÔT!</p>
       </div>
     </div>
   );

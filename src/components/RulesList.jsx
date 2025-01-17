@@ -24,8 +24,8 @@ function RulesList({length, setLength, passV, setPassV, fulfilledStatus, setStat
 
     useEffect(() => {
         if (!fulfilledStatus[8] && length > 9) {
-            document.querySelector(".modalEgg").classList.remove("hidden")
-            document.querySelector(".overlay").classList.remove("hidden")
+            document.querySelector(".modalEgg").classList.add("visible")
+            document.querySelector(".overlay").classList.add("visible")
         }
         setRules((rules) => {
             return rules.map((rule) => ({

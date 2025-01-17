@@ -19,8 +19,8 @@ function Rule({title, description, passV, length, fulfilledStatus, setStatus, id
         setStatus((currentStatus) => {
         let updatedStatus = [...currentStatus];
         if (id >= rulesFunc.length) {
-            document.querySelector(".modalEnd").classList.remove("hidden")
-            document.querySelector(".overlay").classList.remove("hidden")
+            document.querySelector(".modalEnd").classList.add("visible")
+            document.querySelector(".overlay").classList.add("visible")
             return currentStatus;
         }
         updatedStatus[id] = rulesFunc[id](passVRef.current);
