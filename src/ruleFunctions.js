@@ -70,6 +70,10 @@ const Rule16 = (passV) => {
   return /🐛/gu.test(passV);
 }
 
-const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10, Rule11, Rule12, Rule13, Rule14, Rule15, Rule16];
+const Rule17 = (passV) => {
+  return passV.split("🏋️").length-1 >= 3;
+}
+
+const rulesFunc = [Rule1, Rule2, Rule3, Rule4, Rule5, Rule6, Rule7, Rule8, Rule9, Rule10, Rule11, Rule12, Rule13, Rule14, Rule15, Rule16, Rule17];
 
 export default rulesFunc;
