@@ -6,7 +6,7 @@
 
 Ce projet est inspiré du jeu "The Password Game" de Neal Agarwal qui a fait le tour d'Internet en 2023. Il s'agit d'un jeu puzzle ou vous devez écrire un mot de passe en respectant des règles. Chaque fois que vous parvenez à respecter toutes les règles, une nouvelle règle s'affiche et vous devez la respecter elle-aussi, tout en veillant à ne pas enfreindre les autres. Les premières règles sont faciles à respecter, mais ne vous laissez pas décevoir... Pouvez-vous aller jusqu'à la fin de ce puzzle?
 
-Nombre de règles : 17
+Nombre de règles : 18
 
 
 ### Guide d'utilisation
